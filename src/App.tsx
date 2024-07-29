@@ -4,10 +4,12 @@ import Movies from './pages/Movies';
 import TvSeries from './pages/TvSeries';
 import Search from './pages/Search';
 import Details from './pages/Details';
+import Appbar from './components/Appbar';
 
 function App() {
   return (
     <>
+      <Appbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/movies' element={<Movies />} />
