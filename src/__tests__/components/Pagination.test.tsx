@@ -51,7 +51,7 @@ describe('Pagination Component', () => {
     };
 
     render(<Pagination {...props} />);
-    fireEvent.click(screen.getByText('>')); // Clicking next button
+    fireEvent.click(screen.getByText('>'));
 
     expect(handleClick).toHaveBeenCalledWith(2);
   });

@@ -26,3 +26,13 @@ export interface PaginationProps {
   activenum: number;
   handleClick: (pageNo: number) => void;
 }
+
+export interface CastMember {
+  profile_path?: string;
+  name: string;
+  known_for_department: string;
+}
+
+export interface CreditsSliderProps {
+  data: CastMember[];
+}
