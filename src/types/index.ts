@@ -36,3 +36,7 @@ export interface CastMember {
 export interface CreditsSliderProps {
   data: CastMember[];
 }
+
+export interface VideoPlayerProps {
+  videoKey: string | undefined;
+}
