@@ -20,3 +20,9 @@ export interface MovieData {
 export interface MovieCardProps {
   data: MovieData;
 }
+
+export interface PaginationProps {
+  maxnum: number;
+  activenum: number;
+  handleClick: (pageNo: number) => void;
+}
