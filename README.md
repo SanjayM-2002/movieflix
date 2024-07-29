@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# MFlix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mflix (Movie flix) is a simple movie list app built using **React**, **TypeScript** and **TailwindCSS**
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend: **React.js**, **TypeScript**
+- Used **Tailwind CSS** for responsive UI design
+- Used **TMDB** API for fetching relevant data
 
-## Expanding the ESLint configuration
+## Local Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone the repo
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+https://github.com/SanjayM-2002/movieflix.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```bash
+cd movieflix
+```
+
+Set up .env in root:
+
+```bash
+VITE_BASE_URL = "https://api.themoviedb.org/3"
+VITE_API_KEY = ""
+VITE_API_TOKEN = ""
+```
+
+```bash
+npm install
+```
+
+For running application:
+
+```bash
+npm run dev
+```
+
+For testing:
+
+```bash
+npm run test
+```
+
+## Deployed on Vercel
+
+[Live Link](https://movieflix-eight-rho.vercel.app/)
+
+## Demo Video
+
+[Video Link](https://www.loom.com/share/0ccc0ff1b0a54856861a6e9c54c643b1?sid=a585558f-ed7f-4857-ba00-6638d9fc4082)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -36,7 +36,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className='homePage p-4'>
+    <main className=' p-4'>
       <div className='text-center'>
         <section>
           <h1 className='text-3xl font-bold'>Top Trending</h1>

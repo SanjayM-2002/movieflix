@@ -47,10 +47,9 @@ const Movies: React.FC = () => {
   const handleClick = (number: number) => {
     setPageno(number);
   };
-  console.log('1st element is: ', content[0]);
 
   return (
-    <main className='moviesPage p-4'>
+    <main className=' p-4'>
       <div className='text-center'>
         <section>
           <h1 className='text-3xl font-bold'>Top Trending Movies</h1>

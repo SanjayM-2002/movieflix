@@ -23,7 +23,6 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const release_date = data.release_date || data.first_air_date;
   const vote_average = parseInt(data.vote_average?.toString() || '0', 10);
   const original_language = data.original_language || '';
-  console.log('media type is: ', media_type);
 
   return (
     <div className='relative justify-center items-center w-full bg-black border border-gray-800 rounded-lg overflow-hidden shadow-lg hover:cursor-pointer'>
