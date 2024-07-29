@@ -54,3 +54,11 @@ export interface FilterBoxProps {
   type: string;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface SearchBarProps {
+  searchValue: string;
+  setSearchValue: (value: string) => void;
+  typeValue: string;
+  setTypeValue: (value: string) => void;
+  filterData: () => void;
+}
