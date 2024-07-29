@@ -40,3 +40,17 @@ export interface CreditsSliderProps {
 export interface VideoPlayerProps {
   videoKey: string | undefined;
 }
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface FilterBoxProps {
+  selectedGenres: Genre[];
+  setSelectedGenres: React.Dispatch<React.SetStateAction<Genre[]>>;
+  genres: Genre[];
+  setGenres: React.Dispatch<React.SetStateAction<Genre[]>>;
+  type: string;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+}
