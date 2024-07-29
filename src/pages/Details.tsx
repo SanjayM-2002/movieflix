@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import VideoPlayer from '../components/VideoPlayer';
-import CreditsSlider from '../components/CreditsSlider';
+const VideoPlayer = React.lazy(() => import('../components/VideoPlayer'));
+const CreditsSlider = React.lazy(() => import('../components/CreditsSlider'));
 
 const Details: React.FC = () => {
   const params = useParams();
@@ -31,7 +31,7 @@ const Details: React.FC = () => {
   const fetchVideo = async () => {
     try {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/${_media_type}/${id}/videos?api_key=${API_KEY}&language=en-US`
+        `${BASE_URL}/${_media_type}/${id}/videos?api_key=${API_KEY}&language=en-US`
       );
       setVideo(data.results[0]?.key);
     } catch (error) {
@@ -42,7 +42,7 @@ const Details: React.FC = () => {
   const creditsFetch = async () => {
     try {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/${_media_type}/${id}/credits?api_key=${API_KEY}&language=en-US`
+        `${BASE_URL}/${_media_type}/${id}/credits?api_key=${API_KEY}&language=en-US`
       );
       setCredits(data.cast);
     } catch (error) {
@@ -132,8 +132,14 @@ const Details: React.FC = () => {
           </div>
           <section className='mt-8'>
             <div className='grid grid-cols-1 lg:grid-cols-2 justify-around'>
-              <VideoPlayer videoKey={video} />
-              {credits.length > 0 && <CreditsSlider data={credits} />}
+              <Suspense fallback={<div>Loading Video...</div>}>
+                <VideoPlayer videoKey={video} />
+              </Suspense>
+              {credits.length > 0 && (
+                <Suspense fallback={<div>Loading Credits...</div>}>
+                  <CreditsSlider data={credits} />
+                </Suspense>
+              )}
             </div>
           </section>
         </>

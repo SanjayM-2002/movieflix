@@ -12,13 +12,14 @@ const FilterBox: React.FC<FilterBoxProps> = ({
   setPage,
 }) => {
   const API_KEY = import.meta.env.VITE_API_KEY;
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const getDataList = async () => {
     try {
       const {
         data: { genres },
       } = await axios.get(
-        `https://api.themoviedb.org/3/genre/${type}/list?api_key=${API_KEY}&language=en-US`
+        `${BASE_URL}/genre/${type}/list?api_key=${API_KEY}&language=en-US`
       );
       setGenres(genres);
     } catch (error) {
